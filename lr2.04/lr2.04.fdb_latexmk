@@ -1,5 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1776211426.17139 "z:/Physics/PhystechLabs/lr2.04/lr2.04.tex" "lr2.04.pdf" "lr2.04" 1776211430.22475 0
+["pdflatex"] 1776212000.5922 "z:/Physics/PhystechLabs/lr2.04/lr2.04.tex" "lr2.04.pdf" "lr2.04" 1776212004.5124 0
+  "5246819550622322826.jpg" 1775672299 142871 349f3a956dc2aa92e5abc838422eb452 ""
+  "5246819550622322827.jpg" 1775672302 81928 a59aab0f90c3e64a9fa143a97ffab03f ""
   "c:/Users/User/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/labx1200.tfm" 1765797730 3308 eee81981029f67083258db36df06e523 ""
   "c:/Users/User/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/labx1440.tfm" 1765797726 3304 6a543c07045572737981351171e0505e ""
   "c:/Users/User/.texlive2025/texmf-var/fonts/tfm/lh/lh-t2a/larm0500.tfm" 1766059658 3252 c68ec0ea1f15ae7a7cc0660b5a32933c ""
@@ -189,12 +191,12 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1765665650 5585827 b3b7dbd9dfc70a81624c77757fa26602 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1765666199 3635454 8cdd7ecb1df0ae7d6bf9322591c24aae ""
   "c:/texlive/2025/texmf.cnf" 1765665594 713 e69b156964470283e0530f5060668171 ""
-  "lr2.04.aux" 1776211429 2009 d9b279e71d8c2572229b94d5b04329e1 "pdflatex"
-  "lr2.04.tex" 1776211424 12938 aca4036ea28de92c0a00b73c916e69e2 ""
+  "lr2.04.aux" 1776212003 2009 8055c7d4ca9db7036668bfd70a9ffb52 "pdflatex"
+  "lr2.04.tex" 1776211994 13069 96144aaa13143e31058db4dfc3c08b30 ""
   "orig.jpg" 1775667658 180223 5c0c0349299c2508a6682847a1a0ab48 ""
   "sc1.PNG" 1776210995 223336 d9dc00e333c9934411c4a14305040718 ""
   "sc2.png" 1776211343 4465 0820a297340f07c87817c192f43c4d1c ""
-  "z:/Physics/PhystechLabs/lr2.04/lr2.04.tex" 1776211424 12938 aca4036ea28de92c0a00b73c916e69e2 ""
+  "z:/Physics/PhystechLabs/lr2.04/lr2.04.tex" 1776211994 13069 96144aaa13143e31058db4dfc3c08b30 ""
   (generated)
   "lr2.04.aux"
   "lr2.04.log"
