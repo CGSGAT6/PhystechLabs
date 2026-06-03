@@ -1,0 +1,233 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{array}
+\usepackage{indentfirst}
+\usepackage{icomma}
+\usepackage{geometry}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{diagbox}
+\usepackage{gensymb}
+\geometry{a4paper, margin=1in}
+
+\renewcommand{\figurename}{Изображение}
+\renewcommand{\tablename}{Таблица}
+
+\title{Лабораторная работа №2.07
+
+Определение показателя адиабаты воздуха с использованием осциллятора Фламмерсфельда}
+\author{Топунов Антон, Z3142}
+\date{21.03.2026}
+
+\begin{document}
+
+\maketitle
+\clearpage
+\section{Цели и задачи}
+\subsection{Цели}
+\begin{enumerate}
+    \item Определение показателя адиабаты воздуха.
+    \item Определение эффективного числа степеней свободы для молекул воздуха.
+\end{enumerate}
+\subsection{Задачи}
+\begin{enumerate}
+    \item Измерение периода колебаний осциллятора Фламмерсфельда.
+\end{enumerate}
+\section{Теоретическое введение}
+Период колебаний для одного запуска:
+\begin{gather*}
+    T_j = \frac{ t_j}{ N}
+\end{gather*}
+\begin{itemize}
+    \item $N$ - количество колебаний
+    \item $t_j$ - время $N$ колебаний для $j$-го запуска
+\end{itemize}
+Среднее значение периода колебаний и его погрешность:
+\begin{gather*}
+    T = \frac{ \sum\limits_{ j=1}^{ M}T_j}{ M} \\
+    \Delta T_{ \text{сист}} = \frac{ \Delta{t}}{ N}\\
+    \Delta T_{ \text{случ}} = t_{ \alpha, M}\sqrt{\frac{ \sum\limits_{ j=1}^{M }(T_j - T)^2}{ M(M-1)} }\\
+    \Delta T = \sqrt{\Delta T_{ \text{сист}}^2 + \Delta T_{ \text{случ}}^2}
+\end{gather*}
+\begin{itemize}
+    \item $M$ - количество запусков установки (количество серий измерений)
+    \item $t_{ \alpha, M}$ - коэффициент Стьюдента
+    \item $\Delta T_{ \text{сист}}$ - систематическая погрешность периода
+    \item $\Delta T_{ \text{случ}}$ - погрешность разоброса
+\end{itemize}
+
+Показатель адиабаты воздуха:
+\begin{gather*}
+    \gamma = \frac{ 4mV}{ T^2p_0r^4}\\
+    \Delta \gamma = \gamma\sqrt{\bigg( \frac{ \Delta{m}}{m } \bigg)^2 + \bigg( \frac{ \Delta{V}}{V } \bigg)^2
+        +\bigg( \frac{ 2\Delta{T}}{T } \bigg)^2 + \bigg( \frac{ \Delta{p_0}}{p_0 } \bigg)^2 + \bigg( \frac{ 4\Delta{r}}{r } \bigg)^2} 
+\end{gather*}
+\begin{itemize}
+    \item $m$ - масса колеблющегося поршня
+    \item $r$ - внутренний радиус трубки
+    \item $V$ - рабочий обьём колбы
+    \item $p_0$ - атмосферное давление
+\end{itemize}
+
+Теоретическое значение показателя адиабаты воздуха:
+\begin{gather*}
+    \gamma = \frac{ i+2}{ i}
+\end{gather*}
+\begin{itemize}
+    \item $i$ - число эффективных степеней свободы молекул
+\end{itemize}
+
+Из этого выражения и экспериментального значения $\gamma$ можно получить выражение для числа степеней свободы вохдуха:
+\begin{gather*}
+    i = \frac{ 2}{ \gamma-1}\\
+    \Delta i = \frac{ 2\Delta{\gamma}}{ (\gamma-1)^2} 
+\end{gather*}
+\section{Схема установки}
+В этой лабораторной работе используется осциллятор Фламмерсфельда:
+\begin{figure}[H]
+   \centering
+   \includegraphics*[width=0.8\linewidth]{scheme1.PNG}
+   \caption{Внешний вид экспериментальной установки}
+\end{figure}
+\begin{enumerate}
+    \item осциллятор (легкий поршень)
+    \item трубка
+    \item колба
+    \item отверстие
+    \item балластный объем
+    \item компрессор
+    \item редукционный клапан
+    \item оптические ворота
+    \item секундомер
+\end{enumerate}
+
+Осциллятор (поршень) 1 движется в трубке 2, которая составляет единое целое с
+колбой 3. Объем колбы является рабочим объемом $V$. В стенке 8
+трубки около положения равновесия осциллятора сделано отверстие 4. Поднимаясь вверх, осциллятор открывает отверстие,
+и давление в колбе становится равным атмосферному. Выше отверстия
+осциллятор движется только под действием силы тяжести.
+При движении вниз осциллятор перекрывает отверстие и сжимает воздух в колбе, после чего цикл повторяется.
+Для поддержания постоянного давления в колбе и восполнения потерь воздуха через отверстие 4 служит балластный объем 5,
+в который постоянно подкачивается воздух компрессором 6. Регулируя подачу воздуха с помощью редукционного клапана 7
+можно добиться постоянства амплитуды колебаний осциллятора.
+При своем движении осциллятор пересекает луч фотодатчика оптических ворот 8.
+Общее время колебаний измеряется секундомером 9.
+\section{Используемые приборы, инструментальные погрешности}
+\begin{itemize}
+    \item Секундомер $\Delta t = 0.02\text{ c}$
+    \item Лабораторный манометр $\Delta p = 0.1 \text{ кПа}$
+    \item Количество колебаний измеряется оптическими воротами 
+\end{itemize}
+\section{Данные прямых измерений, табличные значения}
+\begin{table}[H]
+   \centering
+   \caption{Прямые измерения времений $N$ колебаний}
+   \begin{tabular}{|c|c|} \hline
+       $j$ & $t_{ j}$, с \\ \hline
+       $1$ & $16.83$ \\ \hline
+       $2$ & $16.72$ \\ \hline
+       $3$ & $16.81$ \\ \hline
+       $4$ & $16.75$ \\ \hline
+       $5$ & $16.76$ \\ \hline
+   \end{tabular}
+\end{table}
+
+Количество серий измерений:
+\begin{gather*}
+    M = 5
+\end{gather*}
+
+Коэффициент Стьюдента для доверительной вероятносит $\alpha = 0.95$ и количества измерений $M = 10$:
+\begin{gather*}
+    t_{ 0.95, 5} = 2.78
+\end{gather*}
+
+Количество колебаний за один запуск установки:
+\begin{gather*}
+    N = 50
+\end{gather*}
+
+Масса поршня:
+
+\begin{gather*}
+    m = (4.59\pm0.02)\text{ г}
+\end{gather*}
+
+Внутренний радиус трубки:
+\begin{gather*}
+    r = (5.95\pm0.02) \text{ мм}    
+\end{gather*}
+
+Рабочий объём колбы
+\begin{gather*}
+    V = (1.14\pm0.01) \text{ дм}^3
+\end{gather*}
+
+Атмосферное давление:
+\begin{gather*}
+    p_0 = (103.9\pm0.1) \text{ кПа}
+\end{gather*}
+
+\section{Расчёты и графики}
+\begin{table}[H]
+   \centering
+   \caption{Период колебаний для каждого запуска}
+   \begin{tabular}{|c|c|} \hline
+        $j$ & $T$, c \\ \hline
+        $1$ & $0.3366$ \\ \hline
+        $2$ & $0.3344$ \\ \hline
+        $3$ & $0.3362$ \\ \hline
+        $4$ & $0.3350$ \\ \hline
+        $5$ & $0.3352$ \\ \hline
+\end{tabular}
+\end{table}
+
+Средний период колебаний и его погрешность:
+\begin{gather*}
+        T = \frac{ \sum\limits_{ j=1}^{ 5}T_j}{ 5} \approx  335.5\cdot10^{-3}\text{ с}\\
+    \Delta T_{ \text{сист}} = \frac{ 0.02}{ 50} = 0.4\cdot10^{-3}\text{ с}\\
+    \Delta T_{ \text{случ}} = 2.78\cdot\sqrt{\frac{ \sum\limits_{ j=1}^{M }(T_j - 0.3355)^2}{ 4\cdot5} }\approx1.1\cdot10^{-3}\text{ с}\\
+    \Delta T = \sqrt{(0.4\cdot10^{-3})^2 + (1.1\cdot10^{-3})^2}\approx1.2\cdot10^{-3}\text{ с}
+\end{gather*}
+
+Показатель адиабаты:
+\begin{gather*}
+    \gamma = \frac{ 4\cdot4.59\cdot10^{-3}\cdot1.14\cdot10^{-3}}{ (335.5\cdot10^{-3})^2\cdot 103.9\cdot10^{3}\cdot(5.95\cdot10^{-3})^4}
+        \approx 1.428\\
+    \Delta \gamma = 1.428\cdot\sqrt{\bigg( \frac{ 0.02\cdot10^{-3}}{4.59\cdot10^{-3} } \bigg)^2 +
+        \bigg( \frac{ 0.01\cdot10^{-3}}{1.14\cdot10^{-3} } \bigg)^2
+        + \bigg( \frac{ 2\cdot1.2\cdot10^{-3}}{335.5\cdot10^{-3}} \bigg)^2 +
+        \bigg( \frac{ 0.1\cdot10^3}{103.9\cdot10^{3} } \bigg)^2 +
+        \bigg( \frac{ 4\cdot0.02\cdot10^{-3}}{5.95\cdot10^{-3} } \bigg)^2} 
+        \approx0.026
+\end{gather*}
+
+Количество эффективных степеней свободы:
+\begin{gather*}
+    i = \frac{ 2}{ 1.428-1} \approx 4.67 \\
+    \Delta i = \frac{ 2\cdot0.026}{ (1.428-1)^2} \approx 0.28 
+\end{gather*}
+
+\section{Результаты и выводы}
+Период колебаний поршня в осцилляторе Фламмерсфельда получился $T = (335.5 \pm 1.2)\cdot10^{-3}\text{ с}$.
+Показатель адиабаты воздуха получился $\gamma = (1.428\pm0.026)$, а количество эффективных степеней свободы
+$i = (4.67\pm0.28)$, они близки к теоретическим, если счиать что воздух состоит преимущественно из двухатомных
+молекул с замороженной колебательной степенью свободы ($\gamma = 1.4$, $i = 5$), но всё же не вкючают их в свои доверительные интервалы.
+Это может быть связано с неучтённой погрешностью количества колебаний (например незарегистрированные половина периода).
+Но несмотря на это полученные значения достаточно точны, их относительные погрешности не больше шести процентов.
+\clearpage
+\begin{figure}[H]
+   \centering
+   \includegraphics*[width=0.8\linewidth]{25274.jpg}
+   \caption{Подписанные значения прямых измерений}
+\end{figure}
+\end{document}
